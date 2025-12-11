@@ -152,7 +152,7 @@ PARAM_DEFINE_INT32(MNT_MAN_YAW, 0);
 PARAM_DEFINE_INT32(MNT_DO_STAB, 0);
 
 /**
-* Max angle of pitch channel output in degrees (only in AUX output mode).
+* Max angle of pitch channel output in degrees (only in AUX output mode). Use PWM_CENT for zero-deflection and PWM_MAX for limits.
 *
 * @unit deg
 * @decimal 1
@@ -161,7 +161,7 @@ PARAM_DEFINE_INT32(MNT_DO_STAB, 0);
 PARAM_DEFINE_FLOAT(MNT_MAX_PITCH, 45.0f);
 
 /**
-* Min angle of pitch channel output in degrees (only in AUX output mode).
+* Min angle of pitch channel output in degrees (only in AUX output mode). Use PWM_CENT for zero-deflection and PWM_MIN for limits.
 *
 * @unit deg
 * @decimal 1
@@ -170,7 +170,7 @@ PARAM_DEFINE_FLOAT(MNT_MAX_PITCH, 45.0f);
 PARAM_DEFINE_FLOAT(MNT_MIN_PITCH, -45.0f);
 
 /**
-* Range of roll channel output in degrees (only in AUX output mode).
+* Range of roll channel output in degrees (only in AUX output mode). Use PWM_CENT for zero-deflection and PWM_MIN / PWM_MAX for limits.
 *
 * @min 1.0
 * @max 720.0
@@ -181,7 +181,7 @@ PARAM_DEFINE_FLOAT(MNT_MIN_PITCH, -45.0f);
 PARAM_DEFINE_FLOAT(MNT_RANGE_ROLL, 90.0f);
 
 /**
-* Range of yaw channel output in degrees (only in AUX output mode).
+* Range of yaw channel output in degrees (only in AUX output mode). Use PWM_CENT for zero-deflection and PWM_MIN / PWM_MAX for limits.
 *
 * @min 1.0
 * @max 720.0
@@ -191,38 +191,6 @@ PARAM_DEFINE_FLOAT(MNT_RANGE_ROLL, 90.0f);
 */
 PARAM_DEFINE_FLOAT(MNT_RANGE_YAW, 360.0f);
 
-/**
-* Offset for pitch channel output in degrees.
-*
-* @min -360.0
-* @max 360.0
-* @unit deg
-* @decimal 1
-* @group Mount
-*/
-PARAM_DEFINE_FLOAT(MNT_OFF_PITCH, 0.0f);
-
-/**
-* Offset for roll channel output in degrees.
-*
-* @min -360.0
-* @max 360.0
-* @unit deg
-* @decimal 1
-* @group Mount
-*/
-PARAM_DEFINE_FLOAT(MNT_OFF_ROLL, 0.0f);
-
-/**
-* Offset for yaw channel output in degrees.
-*
-* @min -360.0
-* @max 360.0
-* @unit deg
-* @decimal 1
-* @group Mount
-*/
-PARAM_DEFINE_FLOAT(MNT_OFF_YAW, 0.0f);
 
 /**
  * Angular pitch rate for manual input in degrees/second.
