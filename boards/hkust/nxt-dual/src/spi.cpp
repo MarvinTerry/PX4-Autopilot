@@ -45,8 +45,9 @@ constexpr px4_spi_bus_t px4_spi_buses[SPI_BUS_MAX_BUS_ITEMS] = {
 		initSPIDevice(SPIDEV_FLASH(0), SPI::CS{GPIO::PortD, GPIO::Pin4})
 	}),
 	initSPIBus(SPI::Bus::SPI3, {
-		// not in use, future development
-		initSPIDevice(DRV_FLOW_DEVTYPE_PMW3901, SPI::CS{GPIO::PortC, GPIO::Pin0})
+		initSPIConfigExternal(SPI::CS{GPIO::PortC, GPIO::Pin0}),
+		initSPIConfigExternal(SPI::CS{GPIO::PortC, GPIO::Pin1}),
+		initSPIConfigExternal(SPI::CS{GPIO::PortA, GPIO::Pin4}),
 	}),
 	initSPIBus(SPI::Bus::SPI4, {
 		initSPIDevice(DRV_GYR_DEVTYPE_BMI088, SPI::CS{GPIO::PortC, GPIO::Pin2}, SPI::DRDY{GPIO::PortE, GPIO::Pin3}),
